@@ -1,0 +1,26 @@
+function onLoad()
+
+    self.setName("Chips")
+    self.setDescription("Spawn 5000 chips")
+    self.lock()
+
+    bParam = {}
+    bParam.click_function = 'callSpawnChips'
+    bParam.function_owner = Global
+    bParam.label = 'Spawn Chips'
+    bParam.tooltip = 'Spawn 5000 chips in the play area'
+    bParam.position = {0,-0.25,00}
+    bParam.rotation = {0,0,180}
+    bParam.width = 2000
+    bParam.height = 1200
+    bParam.font_size = 300
+    bParam.color = {255/255, 255/255, 255/255}
+    self.createButton(bParam)
+end
+
+function emptyFunction()
+end
+
+function callSpawnChips(objectButtonClicked, playerColorClicked)
+    Global.call("callSpawnChips", {objectButtonClicked, playerColorClicked})
+end
